@@ -21,7 +21,8 @@ function Login(){
                 className="login-form-email" 
                 value={email}
                 onChange={(e) => setEmail(e.currentTarget.value)}
-                placeholder="Email"/>
+                placeholder="Email"
+                required/>
 
                 <label htmlFor="login-form-password">Password</label>
                 <input
@@ -29,7 +30,8 @@ function Login(){
                 className="login-form-password" 
                 value={password}
                 onChange={(e) => setPassword(e.currentTarget.value)}
-                placeholder="Password"/>
+                placeholder="Password"
+                required/>
 
                 <input
                 type="submit"
