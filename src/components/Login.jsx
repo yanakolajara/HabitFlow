@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getAllUsers } from '../Api/Api'
 
 
 function Login(){
@@ -6,11 +7,23 @@ function Login(){
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
 
-
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault()
-        console.log(e.currentTarget.children[2])
+        const userEmail = (e.currentTarget.children[1].value)
+        const userPassword = (e.currentTarget.children[3].value)
+        try {
+            let allUsers = await getAllUsers();
+            allUsers = allUsers.data
+            const userObj = allUsers.find((user) => user.email === userEmail && user.password === userPassword)
+            console.log(!!userObj)
+        } catch (error) {
+            console.log(error)
+        }
+        console.log(userEmail)
+        console.log(userPassword)
     }
+
+
 
     return(
         <div id="login-route">
