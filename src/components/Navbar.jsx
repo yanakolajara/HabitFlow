@@ -8,12 +8,12 @@ function Navbar(){
 
     function redirectToLogin(e){
         e.preventDefault()
-        console.log('LOGIN')
+        navigate('/login')
     }
     
     function redirectToSignup(e){
         e.preventDefault()
-        console.log('SIGNUP')
+        navigate('/signup')
     }
 
     function checkUserLogInStatus(){
