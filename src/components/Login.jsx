@@ -1,3 +1,4 @@
+import '../styles/Form.css'
 import { useEffect, useState } from "react";
 import { getAllUsers } from '../Api/Api'
 
@@ -26,30 +27,33 @@ function Login(){
 
 
     return(
-        <div id="login-route">
-            <form onSubmit={(e) => handleSubmit(e)} className="form">
-                <label htmlFor="login-form-email">Email</label>
-                <input
-                type="email"
-                className="login-form-email" 
-                value={email}
-                onChange={(e) => setEmail(e.currentTarget.value)}
-                placeholder="Email"
-                required/>
+        <div id="form-div">
+            <form className="form" onSubmit={(e) => handleSubmit(e)}>
+            <p class="title">Log In </p>
+                <label> Email
+                    <input
+                    placeholder="Email"
+                    type="email"
+                    className="input" 
+                    value={email}
+                    onChange={(e) => setEmail(e.currentTarget.value)}
+                    required/>
+                </label>
 
-                <label htmlFor="login-form-password">Password</label>
-                <input
-                type="password"
-                className="login-form-password" 
-                value={password}
-                onChange={(e) => setPassword(e.currentTarget.value)}
-                placeholder="Password"
-                required/>
+                <label> Password
+                    <input
+                    placeholder="Password"
+                    type="password"
+                    className="input" 
+                    value={password}
+                    onChange={(e) => setPassword(e.currentTarget.value)}
+                    required/>
+                </label>
 
                 <input
                 type="submit"
                 value='Log In'
-                className="login-form-submit-button"/>
+                className="submit"/>
             </form>
         </div>
     )

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../styles/Signup.css'
+import '../styles/Form.css'
 
 
 function Signup(){
@@ -24,7 +24,7 @@ function Signup(){
     }
 
     return(
-        <div id='signup-route'>
+        <div id='form-div'>
             <form className="form" onSubmit={(e) => {handleSubmit(e)}}>
                 <p class="title">Register </p>
                 <div class="flex">
