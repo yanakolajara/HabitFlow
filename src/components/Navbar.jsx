@@ -48,7 +48,7 @@ function Navbar(){
     return(
         <div id='navbar-box'>
             <div className='icon-div'>
-                <img id= "navbar-logo-icon"src={logoIcon} alt="logo" />
+                <img id= "navbar-logo-icon"src={logoIcon} alt="logo" onClick={() => navigate('/')}/>
             </div>
             {checkUserLogInStatus()}
         </div>

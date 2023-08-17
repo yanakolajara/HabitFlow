@@ -1,10 +1,34 @@
 #homepage-main-div{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     margin-top: 50px;
+    height: 3000px;
+}
+
+#homepage-welcome-title-text{
+    color: rgb(96, 125, 181);
+    font-size: 4em;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
 }
 
 #homepage-main-icon{
-    width: 500px;
+    width: 400px;
+    margin-bottom: 80px;
+}
+
+#homepage-info{
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+}
+
+#homepage-info article{
+    padding: 30px;
+}
+
+#homepage-info h2{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 3em;
 }

@@ -27,7 +27,7 @@ function Login(){
 
     return(
         <div id="login-route">
-            <form onSubmit={(e) => handleSubmit(e)}>
+            <form onSubmit={(e) => handleSubmit(e)} className="form">
                 <label htmlFor="login-form-email">Email</label>
                 <input
                 type="email"

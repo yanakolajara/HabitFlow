@@ -9,6 +9,9 @@ import Dashboard from './components/Dashboard';
 function App() {
   return (
     <div className='app'>
+      <script>
+        AOS.init();
+      </script>
       <Navbar/>
       <Routes>
         <Route path='/' element={<Homepage/>}/>

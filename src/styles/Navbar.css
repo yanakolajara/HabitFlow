@@ -3,7 +3,7 @@
     grid-template-columns: 75% 25%;
     height: 80px;
     margin-bottom: 30px;
-    background: rgb(236, 207, 246);
+    background: rgb(240, 188, 255);
     box-shadow: 1px 1px 10px black;
 }
 .icon-div{
@@ -15,6 +15,10 @@
 #navbar-logo-icon{
     width: 100px;
     height: 60px;
+}
+
+#navbar-logo-icon:hover{
+    cursor: pointer;
 }
 
 #navbar-logged-out-buttons{
