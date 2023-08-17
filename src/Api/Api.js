@@ -9,6 +9,10 @@ async function getAllUsers(){
     }
 }
 
+async function getAllHabits(){
+    
+}
+
 export {
     getAllUsers,
 }

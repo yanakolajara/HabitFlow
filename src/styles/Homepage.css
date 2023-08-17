@@ -1,0 +1,10 @@
+#homepage-main-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+#homepage-main-icon{
+    width: 500px;
+}

@@ -1,7 +1,59 @@
 #navbar-box{
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    border: 1px solid black;
-    width: 100%;
+    grid-template-columns: 75% 25%;
     height: 80px;
+    margin-bottom: 30px;
+    background: rgb(236, 207, 246);
+    box-shadow: 1px 1px 10px black;
+}
+.icon-div{
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+}
+
+#navbar-logo-icon{
+    width: 100px;
+    height: 60px;
+}
+
+#navbar-logged-out-buttons{
+    display: inline-flex;
+    align-items: center;
+}
+
+#navbar-signup-button{
+    grid-column: 2/3;
+    border: 0;
+    border-radius: 15px;
+    width: 140px;
+    height: 50px;
+    background: 0;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    transition: .15s;
+}
+
+#navbar-login-button{
+    grid-column: 3/4;
+    width: 130px;
+    height: 50px;
+    margin-left: 30px;
+    border: 0;
+    border-radius: 15px;
+    background-color: #a971d3;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 2em;
+    color: rgb(255,255,255);
+    transition: .15s;
+}
+
+#navbar-login-button:hover{
+    background-color: #8d56b8;
+    cursor: pointer;
+}
+
+#navbar-signup-button:hover{
+    background-color: rgb(228, 183, 243);
+    cursor: pointer;
 }

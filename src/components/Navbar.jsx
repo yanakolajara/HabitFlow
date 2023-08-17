@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import '../styles/Navbar.css'
 import { useNavigate } from 'react-router-dom';
+import logoIcon from '../assets/logo/logo-title.png'
 
 function Navbar(){
     const [loggedin, setLoggedin] = useState(false)
@@ -30,23 +31,25 @@ function Navbar(){
             )
         }else{
             return(
-                <>
-                <button
-                id='navbar-login-button'
-                onClick={(e) => redirectToLogin(e)}
-                >Log in</button>
+                <div id="navbar-logged-out-buttons">
                 <button
                 id='navbar-signup-button'
                 onClick={(e) => redirectToSignup(e)}
                 >Sign up</button>
-                </>
+                <button
+                id='navbar-login-button'
+                onClick={(e) => redirectToLogin(e)}
+                >Log in</button>
+                </div>
             )
         }
     }
 
     return(
         <div id='navbar-box'>
-            <img src="" alt="logo" />
+            <div className='icon-div'>
+                <img id= "navbar-logo-icon"src={logoIcon} alt="logo" />
+            </div>
             {checkUserLogInStatus()}
         </div>
     )
