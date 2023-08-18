@@ -9,10 +9,19 @@ async function getAllUsers(){
     }
 }
 
-async function getAllHabits(){
-    
+async function login(email, password){
+    try {
+        const user = await Axios.post('/users/login', {
+            email: email,
+            password: password
+        })
+        return user
+    } catch (error) {
+        return error
+    }
 }
 
 export {
     getAllUsers,
+    login
 }
