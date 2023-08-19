@@ -38,7 +38,7 @@
     transition: .15s;
 }
 
-#navbar-login-button{
+#navbar-button{
     grid-column: 3/4;
     width: 130px;
     height: 50px;

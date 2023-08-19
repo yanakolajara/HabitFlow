@@ -21,7 +21,17 @@ async function login(email, password){
     }
 }
 
+async function verifyToken(token){
+    try {
+        const user = await Axios.get(`/users/verify-token/${token}`)
+        return user
+    } catch (error) {
+        return error
+    }
+}
+
 export {
     getAllUsers,
-    login
+    login,
+    verifyToken
 }

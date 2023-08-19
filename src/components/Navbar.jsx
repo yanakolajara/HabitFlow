@@ -1,10 +1,11 @@
-import { useState } from 'react';
 import '../styles/Navbar.css'
+import { UserContext } from '../Context/Auth';
+import { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoIcon from '../assets/logo/logo-title.png'
 
 function Navbar(){
-    const [loggedin, setLoggedin] = useState(false)
+    const {email} = useContext(UserContext)
     const navigate = useNavigate()
 
     function redirectToLogin(e){
@@ -16,16 +17,17 @@ function Navbar(){
         e.preventDefault()
         navigate('/signup')
     }
+    //TODO: Fix buttons and reload
 
     function checkUserLogInStatus(){
-        if(loggedin){
+        if(email){
             return(
                 <>
                 <button
-                id='navbar-dashboard-dropdown'
+                id='navbar-button'
                 >Dashboard</button>
                 <button
-                id='navbar-dashboard-dropdown'
+                id='navbar-button'
                 >Account</button>
                 </>
             )
@@ -37,7 +39,7 @@ function Navbar(){
                 onClick={(e) => redirectToSignup(e)}
                 >Sign up</button>
                 <button
-                id='navbar-login-button'
+                id='navbar-button'
                 onClick={(e) => redirectToLogin(e)}
                 >Log in</button>
                 </div>

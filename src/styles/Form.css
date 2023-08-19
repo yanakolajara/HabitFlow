@@ -2,6 +2,12 @@
     display: flex;
     justify-content: center;
 }
+#form-error{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  font-family: 'Quicksand', sans-serif;
+}
 
 .form {
   font-family: 'Quicksand', sans-serif;
@@ -122,7 +128,7 @@
   .submit {
     border: none;
     outline: none;
-    background-color: royalblue;
+    background-color: rgb(160, 47, 214);
     padding: 10px;
     border-radius: 10px;
     color: #fff;

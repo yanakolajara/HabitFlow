@@ -6,7 +6,7 @@ import logo from '../assets/logo/habit-flow-icon-hd.png'
 function Homepage(){
     const [activeHabits, setActiveHabits] = useState(false)
     const [loggedin, setLoggedin] = useState(false)
-    
+
     function checkHabits(){
         if(!activeHabits){
             return(
