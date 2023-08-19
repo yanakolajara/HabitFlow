@@ -16,7 +16,8 @@ function Login(){
             let userToken = await login(email, password);
             if(!userToken.data.error){
                 document.cookie = `authToken=${userToken.data}`    
-                navigate('/');
+                navigate('/dashboard');
+                window.location.reload();
             }else{
                 setError(userToken.data.error)
             }

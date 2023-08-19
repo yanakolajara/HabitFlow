@@ -13,7 +13,6 @@ function App() {
 
   const [loading, setLoading] = useState(true)
   const [userAuthInfo, setUserAuthInfo] = useState({})
-  const [authStatus, setAuthStatus] = useState(false)
 
   const checkUserAuthStatus = async () => {
     try {

@@ -30,8 +30,21 @@ async function verifyToken(token){
     }
 }
 
+async function checkUserHabits(id){
+    try {
+        const userHabits = Axios.get(`/users/${id}/habits`);
+        return userHabits;
+    } catch (error) {
+        return error
+    }
+}
+
+
+
+
 export {
     getAllUsers,
     login,
-    verifyToken
+    verifyToken,
+    checkUserHabits
 }

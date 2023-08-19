@@ -1,8 +1,8 @@
 import 'charts.css';
+import { useEffect } from 'react';
 
 
 function Dashboard() {
-
 
     return(
         <div id="dashboard-div">

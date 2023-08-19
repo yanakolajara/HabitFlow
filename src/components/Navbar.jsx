@@ -24,10 +24,10 @@ function Navbar(){
             return(
                 <>
                 <button
-                id='navbar-button'
+                id='navbar-dashboard-button'
                 >Dashboard</button>
                 <button
-                id='navbar-button'
+                id='navbar-account-button'
                 >Account</button>
                 </>
             )
@@ -39,7 +39,7 @@ function Navbar(){
                 onClick={(e) => redirectToSignup(e)}
                 >Sign up</button>
                 <button
-                id='navbar-button'
+                id='navbar-login-button'
                 onClick={(e) => redirectToLogin(e)}
                 >Log in</button>
                 </div>
