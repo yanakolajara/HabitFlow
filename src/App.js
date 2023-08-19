@@ -40,9 +40,7 @@ function App() {
       <p>Loading...</p>
     )
   }
-  console.log('??????????')
-  console.log(userAuthInfo)
-  console.log('??????????')
+
   return (
     <div className='app'>
       <UserContext.Provider

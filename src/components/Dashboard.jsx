@@ -1,8 +1,20 @@
 import 'charts.css';
-import { useEffect } from 'react';
+import { useContext, useEffect } from 'react';
+import { checkUserHabits } from '../Api/Api';
+import { UserContext } from '../Context/Auth';
 
 
 function Dashboard() {
+
+    //TODO: Finish checkUserHabits function in API and backend
+    const { id, name } = useContext(UserContext)
+    function fetchUserHabits(){
+
+    }
+
+    useEffect(() => {
+        fetchUserHabits()
+    }, [])
 
     return(
         <div id="dashboard-div">

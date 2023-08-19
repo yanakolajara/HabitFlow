@@ -40,8 +40,6 @@ async function checkUserHabits(id){
 }
 
 
-
-
 export {
     getAllUsers,
     login,
