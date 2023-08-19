@@ -17,23 +17,34 @@ function Navbar(){
         e.preventDefault()
         navigate('/signup')
     }
-    //TODO: Fix buttons and reload
+
+    function redirectToDashboard(e){
+        e.preventDefault()
+        navigate('/dashboard')
+    }
+
+    function redirectToAccount(e){
+        e.preventDefault()
+        navigate('/settings')
+    }
 
     function checkUserLogInStatus(){
         if(email){
             return(
-                <>
+                <div id="navbar-buttons">
                 <button
                 id='navbar-dashboard-button'
+                onClick={(e) => redirectToDashboard(e)}
                 >Dashboard</button>
                 <button
                 id='navbar-account-button'
+                onClick={(e) => redirectToAccount(e)}
                 >Account</button>
-                </>
+                </div>
             )
         }else{
             return(
-                <div id="navbar-logged-out-buttons">
+                <div id="navbar-buttons">
                 <button
                 id='navbar-signup-button'
                 onClick={(e) => redirectToSignup(e)}
