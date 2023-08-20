@@ -32,8 +32,26 @@ async function verifyToken(token){
 
 async function checkUserHabits(id){
     try {
-        const userHabits = Axios.get(`/users/${id}/habits`);
+        const userHabits = await Axios.get(`/users/${id}/habits/user-habits`);
         return userHabits;
+    } catch (error) {
+        return error
+    }
+}
+
+async function getAllHabits(){
+    try {
+        const allHabits = await Axios.get('/habits')
+        return allHabits;
+    } catch (error) {
+        return error
+    }
+}
+
+async function addHabitToUser(userId, habitId){
+    try {
+        const habitToUser = await Axios.post(`/users/${userId}/habits/user-habits/${habitId}`)
+        return habitToUser;
     } catch (error) {
         return error
     }
@@ -44,5 +62,7 @@ export {
     getAllUsers,
     login,
     verifyToken,
-    checkUserHabits
+    checkUserHabits,
+    getAllHabits,
+    addHabitToUser
 }

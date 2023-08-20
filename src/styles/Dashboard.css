@@ -1,0 +1,65 @@
+#dashboard-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#no-habits-dashboard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: auto;
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #a05cec;
+    border: 0;
+    border-radius: 15px;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 800;
+    color: white;
+
+}
+
+#new-habits-container{
+    width: 100%;
+}
+
+#add-all-selected-habits{
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #d3acff;
+}
+
+.new-habit-card{
+    margin-bottom: 20px;
+    padding: 20px 20px 5px 20px;
+    background-color: #bd84ff;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.new-habit-card h3{
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.new-habit-card p{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.new-habit-card button{
+    width: 10%;
+    border-radius: 15px;
+    border: 0;
+    height: 40px;
+    background-color: #ebbdff;
+    font-size: 1.5em;
+}
+
+.new-habit-card button:hover{
+    background-color: #d6a7eb;
+}

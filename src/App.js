@@ -2,12 +2,13 @@ import { Route, Router, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import './App.css';
 import { UserContext } from './Context/Auth';
-import Homepage from './components/Homepage';
-import Login from './components/Login';
-import Signup from './components/Signup';
-import Dashboard from './components/Dashboard';
+import Homepage from './routes/Homepage';
+import Login from './routes/Login';
+import Signup from './routes/Signup';
+import Dashboard from './routes/Dashboard';
 import { useEffect, useState } from 'react';
 import { verifyToken } from './Api/Api';
+import Calendar from 'react-calendar';
 
 function App() {
 
