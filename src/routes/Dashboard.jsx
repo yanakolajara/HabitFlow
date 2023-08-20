@@ -1,7 +1,7 @@
 import 'charts.css';
 import '../styles/Dashboard.css'
 import { useContext, useEffect, useState } from 'react';
-import { checkUserHabits, getAllHabits } from '../Api/Api';
+import { addHabitToUser, checkUserHabits, getAllHabits } from '../Api/Api';
 import { UserContext } from '../Context/Auth';
 
 
@@ -36,6 +36,12 @@ function Dashboard() {
     }
     function addHabitButtonClicked(habitId){
         setHabitsToAdd([...habitsToAdd, habitId])
+    }
+
+    function addAllSelectedHabits(e){
+        e.preventDefault()
+        habitsToAdd.map(habit => addHabitToUser(id, habit))
+        window.location.reload();
     }
 
     function getHabitCards(){
@@ -77,7 +83,7 @@ function Dashboard() {
                     <h1>Add the habits that best fits to you.</h1>
                     <button
                     id="add-all-selected-habits"
-                    onClick={() => console.log(habitsToAdd)}
+                    onClick={(e) => addAllSelectedHabits(e)}
                     >Add habits</button>
                     <div id="new-habits-container">
                         {getHabitCards()}
