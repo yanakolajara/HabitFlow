@@ -30,6 +30,15 @@ function Navbar(){
         window.location.reload();
     }
 
+    function handleLogoClick(e){
+        e.preventDefault()
+        if(email){
+            navigate('/dashboard')
+        }else{
+            navigate('/')
+        }
+    }
+
     function checkUserLogInStatus(){
         if(email){
             return(
@@ -63,7 +72,7 @@ function Navbar(){
     return(
         <div id='navbar-box'>
             <div className='icon-div'>
-                <img id= "navbar-logo-icon"src={logoIcon} alt="logo" onClick={() => navigate('/')}/>
+                <img id= "navbar-logo-icon"src={logoIcon} alt="logo" onClick={(e) => handleLogoClick(e)}/>
             </div>
             {checkUserLogInStatus()}
         </div>
