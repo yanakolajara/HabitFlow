@@ -1,4 +1,5 @@
 import '../styles/Stats.css'
+import '../styles/Dashboard.css'
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../Context/Auth";

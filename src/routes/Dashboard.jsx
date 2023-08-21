@@ -1,3 +1,4 @@
+import '../styles/Dashboard.css'
 import { useContext, useEffect, useState } from 'react';
 import { addHabitToUser, checkUserHabits, getAllHabits } from '../Api/Api';
 import { UserContext } from '../Context/Auth';
