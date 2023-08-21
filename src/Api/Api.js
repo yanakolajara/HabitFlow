@@ -66,6 +66,15 @@ async function getAllHabits(){
     }
 }
 
+async function getHabitById(habitId){
+    try {
+        const habitById = await Axios.get(`/habits/${habitId}`);
+        return habitById;
+    } catch (error) {
+        return error;
+    }
+}
+
 async function addHabitToUser(userId, habitId){
     try {
         const habitToUser = await Axios.post(`/users/${userId}/habits/user-habits/${habitId}`)
@@ -106,6 +115,7 @@ export {
     verifyToken,
     checkUserHabits,
     getAllHabits,
+    getHabitById,
     addHabitToUser,
     getHabitStats,
     createHabitStats

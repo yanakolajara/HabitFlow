@@ -39,7 +39,7 @@
 #display-user-habits{
     width: 70%;
     padding: 30px 10px 10px 30px;
-    background-color: #A638DB;
+    background-color: #E3B1FF;
     border-radius: 10px;
 }
 
@@ -47,23 +47,23 @@
     margin-bottom: 30px;
     margin-left: 40px;
     color: white;
-    text-shadow: 0 0 2px #000000, 0 0 2px #000000;
 }
 
 .habit-card{
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 15px;
-    background-color: #cc65ff;
+    background-color: #d58cff;
     color: white;
-    text-shadow: 0 0 2px #000000, 0 0 2px #000000;
 }
 
 .habit-card-button-block button{
     margin-left: 20px;
-    border: 0;
+    border: 2px solid black;
     border-radius: 10px;
-    background-color: #F0BCFF;
+    background-color: #be6bee;
+    font-weight: 600;
+    color: white;
 }
 
 .new-habit-card{

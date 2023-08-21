@@ -74,7 +74,7 @@ function Dashboard() {
                         <button
                         className='habit-log-history-button'
                         onClick={() => {navigate(`/dashboard/${habitObj.id}/stats`)}}
-                        >Log History</button>
+                        >Add data</button>
                         <button
                         className='habit-delete-button'
                         >

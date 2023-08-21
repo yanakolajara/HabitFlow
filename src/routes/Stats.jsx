@@ -2,12 +2,13 @@ import '../styles/Stats.css'
 import { useContext, useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { UserContext } from "../Context/Auth";
-import { createHabitStats, getHabitStats } from "../Api/Api";
+import { createHabitStats, getHabitById, getHabitStats } from "../Api/Api";
 
 
 function Stats(){
     const { id } = useContext(UserContext)
     const habitId = useParams().habitId
+    const [habit, setHabit] = useState()
     const [stats, setStats] = useState()
     const [isLoading, setIsLoading] = useState(true)
     const navigate = useNavigate()
@@ -17,7 +18,10 @@ function Stats(){
     async function fetchHabitStats(){
         try {
             const habitStats = await getHabitStats(id, habitId);
-            setStats(habitStats.data)
+            const habitObj = await getHabitById(habitId);
+            console.log(habitObj.data)
+            setHabit(habitObj.data);
+            setStats(habitStats.data);
             setIsLoading(false)
         } catch (error) {
             console.log(error)
@@ -64,6 +68,7 @@ function Stats(){
     
     return(
         <div id="user-habit-stats">
+            <h1>{habit[0].name}</h1>
             <div id='stats-buttons-div'>
                 <button
                 id="habit-stats-back-button"
