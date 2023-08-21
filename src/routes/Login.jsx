@@ -1,6 +1,6 @@
 import '../styles/Form.css'
-import { useEffect, useState } from "react";
-import { getAllUsers, login } from '../Api/Api'
+import { useState } from "react";
+import { login } from '../Api/Api'
 import { useNavigate } from 'react-router-dom';
 
 

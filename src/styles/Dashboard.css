@@ -4,6 +4,8 @@
     align-items: center;
 }
 
+/** No habits*/
+
 #no-habits-dashboard{
     display: flex;
     flex-direction: column;
@@ -30,6 +32,38 @@
     border: 0;
     border-radius: 10px;
     background-color: #d3acff;
+}
+
+/** Existing habits */
+
+#display-user-habits{
+    width: 70%;
+    padding: 30px 10px 10px 30px;
+    background-color: #A638DB;
+    border-radius: 10px;
+}
+
+#display-user-habits h1{
+    margin-bottom: 30px;
+    margin-left: 40px;
+    color: white;
+    text-shadow: 0 0 2px #000000, 0 0 2px #000000;
+}
+
+.habit-card{
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    background-color: #cc65ff;
+    color: white;
+    text-shadow: 0 0 2px #000000, 0 0 2px #000000;
+}
+
+.habit-card-button-block button{
+    margin-left: 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #F0BCFF;
 }
 
 .new-habit-card{
@@ -62,4 +96,23 @@
 
 .new-habit-card button:hover{
     background-color: #d6a7eb;
+}
+
+
+/** Stats */
+
+#user-habit-stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-other-habits-buttons button{
+    border: 0;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+
+#add-another-habit{
+    display: none;
 }

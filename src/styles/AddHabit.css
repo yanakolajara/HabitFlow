@@ -1,0 +1,40 @@
+#add-habits-button{
+    margin-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+#new-habits{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.add-new-habit-card{
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 20px 20px 5px 20px;
+    background-color: #bd84ff;
+    border: 1px solid black;
+    border-radius: 15px;
+}
+
+.add-new-habit-card h3{
+    margin-bottom: 20px;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.add-new-habit-card p{
+    font-size: 1.5em;
+    font-weight: 400;
+}
+
+.add-new-habit-card button{
+    width: 10%;
+    border-radius: 15px;
+    border: 0;
+    height: 40px;
+    background-color: #ebbdff;
+    font-size: 1.5em;
+}

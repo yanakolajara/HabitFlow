@@ -9,6 +9,24 @@ async function getAllUsers(){
     }
 }
 
+async function createNewUser(first_name, last_name, dob_day, dob_month, dob_year, gender, email, password){
+    try {
+        const newUser = await Axios.post('/users',{
+            first_name: first_name,
+            last_name: last_name,
+            dob_day: dob_day,
+            dob_month: dob_month,
+            dob_year: dob_year,
+            gender: gender,
+            email: email,
+            password: password
+        })
+        return newUser
+    } catch (error) {
+        return error
+    }
+}
+
 async function login(email, password){
     try {
         const user = await Axios.post('/users/login', {
@@ -57,12 +75,38 @@ async function addHabitToUser(userId, habitId){
     }
 }
 
+async function getHabitStats(userId, habitId){
+    try {
+        const habitStats = await Axios.get(`/users/${userId}/habits/stats/${habitId}`)
+        return habitStats
+    } catch (error) {
+        return error;
+    }
+}
+
+async function createHabitStats(user_id, habit_id, day, month, year, completion, progress){
+    try {
+        const newStat = await Axios.post(`/users/${user_id}/habits/stats/${habit_id}`, {
+            "day": day,
+            "month": month,
+            "year": year,
+            "completion": completion,
+            "progress": progress
+        })
+        return newStat
+    } catch (error) {
+        return error;
+    }
+}
 
 export {
     getAllUsers,
+    createNewUser,
     login,
     verifyToken,
     checkUserHabits,
     getAllHabits,
-    addHabitToUser
+    addHabitToUser,
+    getHabitStats,
+    createHabitStats
 }

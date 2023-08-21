@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import '../styles/Form.css'
+import { createNewUser } from '../Api/Api'
+import { useNavigate } from 'react-router-dom'
 
 
 function Signup(){
 
+    const navigate = useNavigate()
     const [firstName, setFirstName] = useState('')
     const [lastName, setLastName] = useState('')
     const [dob, setDob] = useState(null)
@@ -12,15 +15,12 @@ function Signup(){
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
 
-    function handleSubmit(e){
+    async function handleSubmit(e){
         e.preventDefault()
-        console.log(firstName)
-        console.log(lastName)
-        console.log(dob)
-        console.log(gender)
-        console.log(email)
-        console.log(password)
-        console.log(confirmPassword)
+        const newUser = await createNewUser(firstName,lastName,dob.substr(5,2),dob.substr(8,2),dob.substr(0,4),gender,email,password);
+        if(newUser){
+            navigate('/')
+        }
     }
 
     return(

@@ -1,7 +1,16 @@
 import '../styles/Homepage.css'
 import logo from '../assets/logo/habit-flow-icon-hd.png'
+import { useContext } from 'react';
+import { UserContext } from '../Context/Auth';
+import { useNavigate } from 'react-router-dom';
 
 function Homepage(){
+    const {email} = useContext(UserContext);
+    const navigate = useNavigate();
+    if(!!email){
+        navigate('/dashboard')
+    }
+    
     return(
         <main id='homepage-main-div'>
             <h1 id="homepage-welcome-title-text">Welocome to</h1>

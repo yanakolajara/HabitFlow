@@ -3,6 +3,7 @@ import '../styles/Dashboard.css'
 import { useContext, useEffect, useState } from 'react';
 import { addHabitToUser, checkUserHabits, getAllHabits } from '../Api/Api';
 import { UserContext } from '../Context/Auth';
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -14,20 +15,21 @@ function Dashboard() {
     const [allHabits, setAllHabits] = useState({})
     const [isLoading, setIsLoading] = useState(true)
     const [habitsToAdd, setHabitsToAdd] = useState([])
-    const date = new Date();
-
-    //TODO: Add habits to user with map function, to create a fetch call multiple times, until all habits had been added, then window.refresh
+    const [userHabits, setUserHabits] = useState([])
+    const navigate = useNavigate()
+    if(!id){navigate('/')}
     
     async function fetchUserHabits(){
         try {
             const userHabits = await checkUserHabits(id);
+            const getHabits = await getAllHabits();
+            setAllHabits(getHabits.data)
             if(userHabits.data[0]){
+                setUserHabits(userHabits.data)
                 setHasHabits(true)
                 setIsLoading(false)
             }else{
-                const getHabits = await getAllHabits();
                 setHasHabits(false)
-                setAllHabits(getHabits.data)
                 setIsLoading(false)
             }
         } catch (error) {
@@ -61,10 +63,32 @@ function Dashboard() {
         })
     }
 
+    function getUserHabits(){
+        return userHabits.map((habit) => {
+            const habitObj = allHabits.find(x => habit.habit_id === x.id)
+            return(
+                <div className="habit-card" habitId={habitObj.habit_id}>
+                    <h2>{habitObj.name}</h2>
+                    <p>{habitObj.description}</p>
+                    <div className='habit-card-button-block'>
+                        <button
+                        className='habit-log-history-button'
+                        onClick={() => {navigate(`/dashboard/${habitObj.id}/stats`)}}
+                        >Log History</button>
+                        <button
+                        className='habit-delete-button'
+                        >
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            )
+        })
+    }
+
     useEffect(() => {
         fetchUserHabits()
-    }, [])
-
+    },[])
 
     if(isLoading){
         return <p>Loading...</p>
@@ -72,7 +96,12 @@ function Dashboard() {
     if(hasHabits){
         return(
             <div id="dashboard-div">
-                <p>HELLO</p>
+                <div id="display-user-habits">
+                    <h1>My habits</h1>
+                    {getUserHabits()}
+                    <div className='add-other-habits-buttons'>
+                    </div>
+                </div>
             </div>
         )
     }else{

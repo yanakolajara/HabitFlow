@@ -18,14 +18,16 @@ function Navbar(){
         navigate('/signup')
     }
 
-    function redirectToDashboard(e){
+    function redirectToAddHabit(e){
         e.preventDefault()
-        navigate('/dashboard')
+        navigate('/addhabit')
     }
 
-    function redirectToAccount(e){
+    function logOut(e){
         e.preventDefault()
-        navigate('/settings')
+        document.cookie = 'authToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/'
+        navigate('/')
+        window.location.reload();
     }
 
     function checkUserLogInStatus(){
@@ -34,12 +36,12 @@ function Navbar(){
                 <div id="navbar-buttons">
                 <button
                 id='navbar-dashboard-button'
-                onClick={(e) => redirectToDashboard(e)}
-                >Dashboard</button>
+                onClick={(e) => redirectToAddHabit(e)}
+                >Add habit</button>
                 <button
                 id='navbar-account-button'
-                onClick={(e) => redirectToAccount(e)}
-                >Account</button>
+                onClick={(e) => logOut(e)}
+                >Log out</button>
                 </div>
             )
         }else{

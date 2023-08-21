@@ -9,6 +9,9 @@ import Dashboard from './routes/Dashboard';
 import { useEffect, useState } from 'react';
 import { verifyToken } from './Api/Api';
 import Calendar from 'react-calendar';
+import Stats from './routes/Stats';
+import NotFound from './routes/NotFound';
+import AddHabit from './routes/AddHabit';
 
 function App() {
 
@@ -53,6 +56,9 @@ function App() {
           <Route path='/login' element={<Login/>}/>
           <Route path='/signup' element={<Signup/>}/>
           <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/addhabit' element={<AddHabit/>}/>
+          <Route path='/dashboard/:habitId/stats' element={<Stats/>}/>
+          <Route path='*' element={<NotFound/>}/>
         </Routes>
 
       </UserContext.Provider>

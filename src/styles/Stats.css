@@ -1,0 +1,29 @@
+#user-habit-stats{
+    display: flex;
+    align-items: center;
+}
+
+#list-of-stats{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 70%;
+}
+
+.stat-card{
+    width: 50%;
+    padding-left: 30px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+}
+
+#stats-buttons-div{
+    margin-bottom: 10px;
+}
+
+.stats-buttons{
+    margin-left: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+
+}
