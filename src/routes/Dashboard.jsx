@@ -45,11 +45,6 @@ function Dashboard() {
         window.location.reload();
     }
 
-    async function handleDelete(e) {
-        e.preventDefault();
-        con
-    }
-
     function getHabitCards(){
         return allHabits.map((habit) => {
             return(
