@@ -17,7 +17,6 @@ function Login(){
             if(!userToken.data.error){
                 document.cookie = `authToken=${userToken.data}`    
                 navigate('/dashboard');
-                window.location.reload();
             }else{
                 setError(userToken.data.error)
             }
