@@ -28,9 +28,11 @@ function AddHabit(){
         setHabitsToAdd([...habitsToAdd, habitId])
     }
 
-    function addAllSelectedHabits(e){
+    async function addAllSelectedHabits(e){
         e.preventDefault()
-        habitsToAdd.map(habit => addHabitToUser(id, habit))
+        for(let x of habitsToAdd){
+            await addHabitToUser(id, x)
+        }
         navigate('/dashboard')
         window.location.reload();
     }
