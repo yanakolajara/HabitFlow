@@ -45,6 +45,11 @@ function Dashboard() {
         window.location.reload();
     }
 
+    async function handleDelete(e) {
+        e.preventDefault();
+        con
+    }
+
     function getHabitCards(){
         return allHabits.map((habit) => {
             return(
@@ -74,11 +79,6 @@ function Dashboard() {
                         className='habit-log-history-button'
                         onClick={() => {navigate(`/dashboard/${habitObj.id}/stats`)}}
                         >Add data</button>
-                        <button
-                        className='habit-delete-button'
-                        >
-                            Delete
-                        </button>
                     </div>
                 </div>
             )
