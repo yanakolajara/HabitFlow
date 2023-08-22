@@ -56,7 +56,6 @@ function Stats(){
 
     function handleClickedButton(selection){
         createHabitStats(id, habitId ,date.getDate(),date.getMonth(),date.getFullYear(),selection,1)
-        window.location.reload()
     }
 
     useEffect(() => {

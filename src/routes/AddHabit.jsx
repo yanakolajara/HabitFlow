@@ -34,7 +34,6 @@ function AddHabit(){
             await addHabitToUser(id, x)
         }
         navigate('/dashboard')
-        window.location.reload();
     }
 
     function getHabitCards(){
