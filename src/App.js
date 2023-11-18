@@ -45,7 +45,7 @@ function App() {
       <UserContext.Provider value={userAuthInfo}>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<InternalUser />} />
           <Route path="/internalUser" element={<InternalUser />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />

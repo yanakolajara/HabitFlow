@@ -22,7 +22,7 @@ function Homepage(){
                 <div class="empty-grid-space"/>
                 <div class="empty-grid-space"/>
                 <article>
-                    <h2>Failing is ok, it's part of growing</h2>
+                    <h2>Failing is <a className='internalUserShortcut' href='/internaluser'>o</a>k, it's part of growing</h2>
                 </article>
             </section>
         </main>
