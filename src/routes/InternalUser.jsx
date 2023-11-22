@@ -57,6 +57,7 @@ function InternalUser() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.currentTarget.value)}
+              required
             />
           </div>
           <div class="field">
@@ -75,6 +76,7 @@ function InternalUser() {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.currentTarget.value)}
+              required
             />
           </div>
           <button class="btn" type="submit" onClick={(e) => handleSubmit(e)}>
