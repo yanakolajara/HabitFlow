@@ -60,7 +60,7 @@ function InternalUser() {
               required
             />
           </div>
-          <div class="field">
+          <form class="field" onSubmit={() => handleSubmit()}>
             <svg
               class="input-icon"
               viewBox="0 0 500 500"
@@ -78,10 +78,8 @@ function InternalUser() {
               onChange={(e) => setPassword(e.currentTarget.value)}
               required
             />
-          </div>
-          <button class="btn" type="submit" onClick={(e) => handleSubmit(e)}>
-            Login
-          </button>
+          </form>
+          <input class="btn" type="submit" />
           <a href="#" class="btn-link">
             Forgot your password?
           </a>
