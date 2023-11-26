@@ -8,7 +8,6 @@ import Signup from "./routes/Signup";
 import Dashboard from "./routes/Dashboard";
 import { useEffect, useState } from "react";
 import { verifyToken } from "./Api/Api";
-import Calendar from "react-calendar";
 import Stats from "./routes/Stats";
 import NotFound from "./routes/NotFound";
 import AddHabit from "./routes/AddHabit";
