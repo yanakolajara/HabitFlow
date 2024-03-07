@@ -79,7 +79,7 @@ function InternalUser() {
               required
             />
           </div>
-          <button class="btn" type="submit" onClick={() => handleSubmit()}>
+          <button class="btn" type="submit" onClick={(e) => handleSubmit(e)}>
             SUBMIT
           </button>
           <a href="#" class="btn-link">
