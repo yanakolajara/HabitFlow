@@ -39,7 +39,7 @@ function InternalUser() {
       <div class="card">
         <h4 class="title">Internal server collaborator</h4>
         <h5 className="versionDevice">client type: guest</h5>
-        <form>
+        <form onSubmit={(e) => handleSubmit(e)}>
           <div class="field">
             <svg
               class="input-icon"
@@ -79,9 +79,7 @@ function InternalUser() {
               required
             />
           </div>
-          <button class="btn" type="submit" onClick={(e) => handleSubmit(e)}>
-            SUBMIT
-          </button>
+          <input type="submit" class="btn" />
           <a href="#" class="btn-link">
             Forgot your password?
           </a>

@@ -1,8 +1,8 @@
 import { Route, Router, Routes } from "react-router-dom";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import "./App.css";
 import { UserContext } from "./Context/Auth";
-import Homepage from "./routes/Homepage";
+// import Homepage from "./routes/Homepage";
 import Login from "./routes/Login";
 import Signup from "./routes/Signup";
 import Dashboard from "./routes/Dashboard";
@@ -32,20 +32,19 @@ function App() {
   };
 
   useEffect(() => {
-    checkUserAuthStatus();
+    // checkUserAuthStatus();
   }, []);
 
-  if (loading) {
-    return <p>Loading...</p>;
-  }
+  // if (loading) {
+  //   return <p>Loading...</p>;
+  // }
 
   return (
     <div className="app">
       <UserContext.Provider value={userAuthInfo}>
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path="/" element={<InternalUser />} />
-          <Route path="/internalUser" element={<InternalUser />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
