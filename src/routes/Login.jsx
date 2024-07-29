@@ -14,10 +14,11 @@ function Login() {
     try {
       await login(email, password).then((userToken) => {
         if (userToken.data.error) {
-          alert('You have entered an invalid username or password');
+          console.log('something happened');
         } else {
           document.cookie = `authToken=${userToken.data}`;
-          navigate('/dashboard');
+          navigate('/');
+          window.location.reload();
         }
       });
     } catch (error) {

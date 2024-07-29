@@ -25,10 +25,12 @@ function App() {
       <UserContext.Provider value={userAuth}>
         <Navbar />
         <Routes>
-          <Route path='/' element={<Homepage />} />
+          <Route
+            path='/'
+            element={userAuth.email ? <Dashboard /> : <Homepage />}
+          />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
-          <Route path='/dashboard' element={<Dashboard />} />
           <Route path='/addhabit' element={<AddHabit />} />
           <Route path='/dashboard/:habitId/stats' element={<Stats />} />
           <Route path='*' element={<NotFound />} />
