@@ -15,6 +15,7 @@ function Login() {
       await login(email, password).then((userToken) => {
         if (userToken.data.error) {
           console.log('something happened');
+          setError(userToken.data.error);
         } else {
           document.cookie = `authToken=${userToken.data}`;
           navigate('/');

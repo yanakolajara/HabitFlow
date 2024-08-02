@@ -1,6 +1,6 @@
 import '../styles/Navbar.css';
 import { UserContext } from '../Context/Auth';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import logoIcon from '../assets/logo/logo-title.png';
 import { useAuth } from '../hooks/useAuth';
