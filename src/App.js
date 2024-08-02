@@ -12,13 +12,10 @@ import NotFound from './routes/NotFound';
 import AddHabit from './routes/AddHabit';
 // import Calendar from 'react-calendar';
 import './App.css';
+import AdminAccess from './routes/AdminAccess';
 
 function App() {
   const { userAuth } = useAuth();
-
-  React.useEffect(() => {
-    console.log(userAuth);
-  }, []);
 
   return (
     <div className='app'>
@@ -33,6 +30,7 @@ function App() {
           <Route path='/signup' element={<Signup />} />
           <Route path='/addhabit' element={<AddHabit />} />
           <Route path='/dashboard/:habitId/stats' element={<Stats />} />
+          <Route path='/admin' element={<AdminAccess />} />
           <Route path='*' element={<NotFound />} />
         </Routes>
       </UserContext.Provider>
