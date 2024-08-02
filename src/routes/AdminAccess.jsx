@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
-import { createNewUser, login } from '../Api/Api';
-import { useNavigate } from 'react-router-dom';
+import { createNewUser } from '../Api/Api';
 
 export default function AdminAccess() {
-  const navigate = useNavigate();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [nextStep, setNextStep] = useState(false);
