@@ -5,8 +5,14 @@ import { UserContext } from '../Context/Auth';
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  const { id, first_name } = useContext(UserContext);
-  const [hasHabits, setHasHabits] = useState(false);
+  const {
+    id,
+    // first_name
+  } = useContext(UserContext);
+  //   const [
+  //     hasHabits,
+  //     setHasHabits
+  // ] = useState(false);
   const [allHabits, setAllHabits] = useState({});
   const [isLoading, setIsLoading] = useState(true);
   const [habitsToAdd, setHabitsToAdd] = useState([]);
@@ -23,10 +29,10 @@ function Dashboard() {
       setAllHabits(getHabits.data);
       if (userHabits.data[0]) {
         setUserHabits(userHabits.data);
-        setHasHabits(true);
+        // setHasHabits(true);
         setIsLoading(false);
       } else {
-        setHasHabits(false);
+        // setHasHabits(false);
         setIsLoading(false);
       }
     } catch (error) {
@@ -88,38 +94,37 @@ function Dashboard() {
 
   useEffect(() => {
     fetchUserHabits();
-  });
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
   }
-  if (hasHabits) {
-    return (
-      <div id='dashboard-div'>
-        <div id='display-user-habits'>
-          <h1>My habits</h1>
-          {getUserHabits()}
-          <div className='add-other-habits-buttons'></div>
-        </div>
+
+  return (
+    <div id='dashboard-div'>
+      <div id='display-user-habits'>
+        <h1>My habits</h1>
+        {getUserHabits()}
+        <div className='add-other-habits-buttons'></div>
       </div>
-    );
-  } else {
-    return (
-      <div id='dashboard-div'>
-        <div id='no-habits-dashboard'>
-          <h1>Start today {first_name}!</h1>
-          <h1>Add the habits that best fits to you.</h1>
-          <button
-            id='add-all-selected-habits'
-            onClick={(e) => addAllSelectedHabits(e)}
-          >
-            Add habits
-          </button>
-          <div id='new-habits-container'>{getHabitCards()}</div>
-        </div>
-      </div>
-    );
-  }
+    </div>
+  );
+
+  // return (
+  //   <div id='dashboard-div'>
+  //     <div id='no-habits-dashboard'>
+  //       <h1>Start today {first_name}!</h1>
+  //       <h1>Add the habits that best fits to you.</h1>
+  //       <button
+  //         id='add-all-selected-habits'
+  //         onClick={(e) => addAllSelectedHabits(e)}
+  //       >
+  //         Add habits
+  //       </button>
+  //       <div id='new-habits-container'>{getHabitCards()}</div>
+  //     </div>
+  //   </div>
+  // );
 }
 
 export default Dashboard;

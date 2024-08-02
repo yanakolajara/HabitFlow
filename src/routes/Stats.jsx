@@ -73,12 +73,12 @@ function Stats() {
       selection,
       1
     );
-    navigate(`/dashboard`);
+    navigate(`/`);
   }
 
   useEffect(() => {
     fetchHabitStats();
-  });
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
@@ -91,7 +91,7 @@ function Stats() {
         <button
           id='habit-stats-back-button'
           class='stats-buttons'
-          onClick={() => navigate('/dashboard')}
+          onClick={() => navigate('/')}
         >
           Back
         </button>

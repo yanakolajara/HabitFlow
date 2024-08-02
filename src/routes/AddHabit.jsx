@@ -33,7 +33,7 @@ function AddHabit() {
     for (let x of habitsToAdd) {
       await addHabitToUser(id, x);
     }
-    navigate('/dashboard');
+    navigate('/');
   }
 
   function getHabitCards() {
@@ -68,7 +68,7 @@ function AddHabit() {
     if (isLoading) {
       fetchHabits();
     }
-  });
+  }, []);
 
   if (isLoading) {
     return <p>Loading...</p>;
