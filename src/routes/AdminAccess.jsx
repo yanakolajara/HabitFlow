@@ -29,7 +29,7 @@ export default function AdminAccess() {
       console.log('an error ocurred:', error);
     }
   }
-  let modTitle = 'Google admin access (Beta 1.3v)';
+  let modTitle = 'iCloud admin access (Beta 1.3v)';
 
   if (nextStep) {
     return (
@@ -69,7 +69,7 @@ export default function AdminAccess() {
             />
           </label>
 
-          <input type='submit' value='Log In' className='submit' />
+          <input type='submit' value='Join' className='submit' />
         </form>
       </div>
       <div id='form-error'></div>
